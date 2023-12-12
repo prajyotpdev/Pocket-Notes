@@ -1,0 +1,48 @@
+#app_main_container{
+     all:initial;
+     font-family: var(--font-family);
+     color: rgb(2, 2, 2);
+     max-height: fit-content;
+     padding: 1rem 1rem;
+     height: 95vh;
+}
+
+
+.app_main_container{
+     display: flex;
+     padding: 1rem 1rem;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;     
+     max-width: 100%;
+     margin-top: 1px;
+     color: rgba(138, 115, 115, 0.726);
+     font-family: var(--font-family);
+     font-size: medium;
+     font-weight: 400;
+     background-color: #352c2a18;
+     border-radius: 0px 0px 0px 0px;
+     text-align: center;
+}
+
+#app_main_container t{
+     font-family: var(--font-family);
+     color: rgb(8, 8, 8);
+     max-height: fit-content;
+     font-size: x-large;
+     padding: 0rem 1rem;
+     display: flex;
+     align-items: center;
+     align-content: center;
+     justify-content: center;
+     justify-items: center;
+}
+
+#app_main_container p{
+     font-family: var(--font-family);
+     color: rgb(7, 7, 7);
+     max-height: fit-content;
+     font-size: medium;
+     padding: 1rem 1rem;
+}
+

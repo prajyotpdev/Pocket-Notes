@@ -1,0 +1,118 @@
+.app_sidebar{
+     width: 100%;     
+     height: 100%; 
+}
+
+.app_sidebar_list{
+     display: grid; 
+     grid-template-columns: 2fr 4fr; 
+     grid-gap: 10px; 
+     border: 1px snow ;
+     max-width: 100%;      
+}
+
+.app_sidebar-links{
+     flex:1;
+     display:flex;
+
+}
+
+.appli_status{
+     display:block;
+  background-color: #585858;;
+  color: #fff;  
+  font-family: var(--font-family);
+  font-size: medium;
+  font-weight: 400;
+  border-radius: 1px;
+  margin: none;
+}
+
+.app_sidebar-links_container p{
+     display: flex;
+     padding: 1rem 1rem;
+     flex-direction: column;     
+     max-width: 100%;
+     margin-top: 1px;     
+     font-family: Roboto;
+     font-size: 24px;
+     font-weight: 500;
+     letter-spacing: 0.02em;
+     text-align: left;
+     
+     background-color: white;
+     /* border-radius: 5px 15px 15px 5px; */
+     text-align : center;
+     cursor: pointer;
+}
+
+.app_sidebar-links_container-application_status{
+     display: flex;
+     padding: 1rem 1rem;
+     flex-direction: column;     
+     max-width: 100%;
+     margin-top: 1px;
+     color: rgb(0, 0, 0);
+     font-family: var(--font-family);
+     font-size: medium;
+     font-weight: 400;
+     background-color: #E3341C;
+     border-radius: 5px 15px 15px 5px;
+     text-align: center;
+     transition: 0.3s ease-in-out;
+     cursor: pointer;
+
+}
+
+.app_sidebar-links_container-application_status-links{
+     display: flex;
+     flex-direction: column;     
+     max-width: 100%;
+     margin-top: 1px;
+     color: rgb(0, 0, 0);
+     font-family: var(--font-family);
+     font-size: medium;
+     font-weight: 400;     
+     background-color: #E3341C;
+     text-align: center;
+     cursor: pointer;
+
+}
+
+.app_sidebar-links_container-application_status-links p{
+     display: flex;
+     flex-direction: column;     
+     max-width: 100%;
+     margin-top: 1px;
+     color: transperant;
+     font-family: var(--font-family);
+     font-size: medium;
+     font-weight: 400;
+     transition: width 0.3s ease-in-out;
+     width: 100%;
+     background-color: #52150d;
+     text-align: center;
+     cursor: pointer;
+
+}
+
+
+@media screen  and (max-width:1050px) {
+     .app_sidebar-links_container{
+          display: none;
+     }
+     .app_sidebar-links_container{
+          display: grid;
+     }
+     
+}
+
+@media screen and (min-width: 1050px){
+     .app_sidebar{
+          grid-template-columns: 1fr 4fr; 
+     }
+     .app_sidebar-links_container{
+          max-width: 75%;
+     }     
+     
+}

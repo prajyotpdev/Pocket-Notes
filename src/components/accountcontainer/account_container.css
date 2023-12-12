@@ -1,0 +1,56 @@
+.app_account_container{
+     all:initial;
+     font-family: var(--font-family);
+     color: rgb(255, 255, 255);
+     max-height: fit-content;
+     padding: 0rem 1rem;
+
+
+
+}
+.MdOutlineAccountCircle{
+     align-self: auto;
+     max-width: 100%;
+     
+}
+.app_account_container t{
+     font-family: var(--font-family);
+     color: rgb(0, 0, 0);
+     max-height: fit-content;
+     font-size: x-large;
+
+}
+
+.app_account_container p{
+     font-family: var(--font-family);
+     color: rgb(0, 0, 0);
+     max-height: fit-content;
+     text-align: center;
+     font-size: medium;
+     padding: 1rem 1rem;
+}
+ .app_account_container_sign button{
+     width: 50%;
+     height: 10%;
+     left: 50px;
+     top: 50px;
+     justify-items: center;
+     background:#52150d ;
+     border-radius: 5px;
+     font-size: 15px;
+     border: 0;
+     margin-left: 25%;
+     line-height: 150%;
+     cursor: pointer;
+
+ }
+
+ .app_account_container_sign-font{
+     font-family: var(--font-family);
+     color: rgb(255, 255, 255);
+     max-height: fit-content;
+     font-weight: 600;
+     padding: 0rem 1rem;
+
+ }
+
