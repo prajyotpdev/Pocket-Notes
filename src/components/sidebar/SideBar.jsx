@@ -15,18 +15,17 @@ const SideBar = () => {
      <div className="app_sidebar_title">Pocket Notes</div> 
     <div className="app_sidebar_list">
       <div className="app_sidebar-links_container">
-        <p>
+        
           <a href="#group1" onClick={() => handleLinkClick("Group1")}>
-            Your Land Details
-          </a>
+          <p>Group1
         </p>
-        <p>
+          </a>
           <a href="#group2" onClick={() => handleLinkClick("Group2")}>
-            Transaction History
+          
+        <p>Group2</p>
           </a>
-        </p>
         <a href="#group3" onClick={() => handleLinkClick("Group3")}>
-          <p>Property TAX details</p>
+          <p>Group3</p>
         </a>
       </div>
       <div className="app_main_container">
