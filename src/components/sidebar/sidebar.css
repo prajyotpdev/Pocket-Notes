@@ -3,19 +3,6 @@
      height: 100%; 
 }
 
-.app_sidebar_list{
-     display: grid; 
-     grid-template-columns: 2fr 4fr; 
-     grid-gap: 10px; 
-     border: 1px snow ;
-     max-width: 100%;      
-}
-
-.app_sidebar-links{
-     flex:1;
-     display:flex;
-
-}
 
 .appli_status{
      display:block;

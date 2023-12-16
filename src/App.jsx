@@ -1,13 +1,14 @@
-import { Profiler } from "react";
+import { Provider } from "react-redux";
 import "./App.css";
-import NavBar from "./components/navbar/NavBar";
-import SideBar from "./components/sidebar/sideBar";
 import RouteManager from "./routes/routes";
+import { store } from "./redux/store";
 
 function App() {
   return (
     <>
-    <RouteManager/>
+      <Provider store={store}>
+        <RouteManager />
+      </Provider>
     </>
   );
 }

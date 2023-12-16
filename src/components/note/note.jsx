@@ -1,42 +1,70 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import { IoSend } from "react-icons/io5";
+import { connect } from "react-redux";
+import notedata from "../../server/notes.json";
+import "../../server/notes.json";
+import * as fs from "browserify-fs";
 
 const NoteForm = (props) => {
+  const [notes, setNotes] = useState([]);
+  var { category } = props;
+  // const [newcategory, setnewcategory] = useState("");
 
-  let  { addNote ,category} = props;
+  var addNote = (newNote) => {
+    setNotes([...notes, { ...newNote, id: notes.length + 1 }]);
+    console.log(notes);
+  };
 
   const [noteData, setNoteData] = useState({
-    data: '',
-    category: category,
+    data: "",
+    category: "",
   });
 
-  
-  useEffect(() => {
-    // Update the component when selectedLink changes
-    ({ addNote ,category} = props)
-  }, [props]);
-
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
+    var { name, value } = e.target;
+    noteData.category = category;
     setNoteData({ ...noteData, [name]: value });
   };
+
+  useEffect(() => {
+    localStorage.setItem("Notes", JSON.stringify(notes));
+  }, [notes]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     addNote(noteData);
-    // You can send the data to your backend or update local storage here
+    myFunction(e);
+    setNoteData({
+      data: "",
+      category: "",
+    });
   };
 
+  function myFunction() {
+    document.getElementById("myForm").reset();
+  }
+
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} id="myForm">
       <label>
         Note:
-        <input type="text" name="data" value={noteData.data} onChange={handleInputChange} />
+        <input
+          type="text"
+          name="data"
+          value={noteData.data}
+          onChange={handleInputChange}
+        />
       </label>
       <br />
-      <button type="submit"><IoSend/> </button>
+      <button type="submit">
+        <IoSend />{" "}
+      </button>
     </form>
   );
 };
+
+const mapStateToProps = (state) => ({
+  category: state.category, // assuming "category" is the key for category state
+});
 
 export default NoteForm;

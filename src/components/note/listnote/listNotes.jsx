@@ -1,18 +1,28 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from "react";
 
-const listNotes = () => {
-
+const ListNotes = () => {
   const [notes, setNotes] = useState([]);
 
-  return (
-  <ul>
-    {notes.map((note) => (
-      <li key={note.id}>
-        {`Category: ${note.category}, Note: ${note.data}`}
-      </li>
-    ))}
-  </ul>
-  )
-}
+  const loadData = () => {
+    const storedNotesData = JSON.parse(localStorage.getItem("myDataKey"));
+    setNotes(...notes, storedNotesData);
+  };
 
-export default listNotes
+  useEffect(() => {
+    const data = JSON.parse(localStorage.getItem("Notes"));
+    console.log("this is my note in local storage" + data);
+    setNotes(data);
+  }, [setNotes]);
+
+  return (
+    <ul>
+      {notes.map((note) => (
+        <li key={note.id}>
+          {`Category: ${note.category}, Note: ${note.data}`}
+        </li>
+      ))}
+    </ul>
+  );
+};
+
+export default ListNotes;
