@@ -9,6 +9,13 @@
      grid-gap: 10px; 
      border: 1px snow ;
      max-width: 100%;      
+     color: #000;
+
+font-family: Roboto;
+font-size: 35px;
+font-style: normal;
+font-weight: 500;
+line-height: normal
 }
 
 .app_sidebar-links{

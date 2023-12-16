@@ -1,0 +1,50 @@
+.myform{
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     margin: 0 auto;
+     background: #eee;
+     width: 100%;
+     max-width: 100%;
+     border: 2px solid #212121;
+     border-radius: 4px;
+}
+
+.myform input {  
+     background: #ffffff;
+     border-radius: 9px;
+     border-style: solid;
+     border-color: #cccccc;
+     border-width: 1px;
+     width: 100%;
+     min-height: 211px;
+     max-height: 311px;
+     position: relative;
+}
+
+.myform label {
+
+     font-size: 1.5rem;
+     font-weight: bold;
+   }
+
+   #sendbutton{
+     position: relative; 
+     right: 0px;
+     bottom:   0px;
+
+   }
+
+   .prevnotesdiv{
+     width: 100%;
+     height: 70vh;     
+     overflow-x:hidden;
+     overflow-y:visible;
+     overflow-anchor: var(100);
+   }
+
+   .prevnoteslist{
+     display: flex;
+     flex-wrap: wrap;
+     flex-direction: column;
+     justify-items: end;}

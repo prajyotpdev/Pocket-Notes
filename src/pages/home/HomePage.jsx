@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import NavBar from "../../components/navbar/NavBar";
 import HeroContainer from "../../components/herocontainer/HeroContainer";
 import SideBar from "../../components/sidebar/SideBar";
-import './homepage.css'
+import "./homepage.css";
 
 const HomePage = () => {
   const [category, setCategory] = useState("");
@@ -12,10 +12,14 @@ const HomePage = () => {
 
   return (
     <div className="homepage">
-      <NavBar />
+      {/* <NavBar /> */}
       <div className="app_sidebar_list">
-      <div className="app_sidebar-links_container"><SideBar handleCategoryClick={handleCategoryClick} /></div>
-      <div className="app_main_container"><HeroContainer category={category} /></div>
+        <div className="app_sidebar-links_container">
+          <SideBar handleCategoryClick={handleCategoryClick} />
+        </div>
+        <div className="app_main_container">
+          <HeroContainer category={category} />
+        </div>
       </div>
     </div>
   );

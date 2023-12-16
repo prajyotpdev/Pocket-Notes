@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import LoadingPage from "../pages/loading/loadingPage.jsx";
 import HomePage from "../pages/home/HomePage";
+import Playground from ".././components/playground/playground.jsx";
 const RouteManager = () => {
   const navigate = useNavigate();
 
@@ -23,6 +24,7 @@ const RouteManager = () => {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
+      <Route path="/playground" element={<Playground />} />
 
       <Route
         path="/react-capstone-project/home"

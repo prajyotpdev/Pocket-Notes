@@ -1,18 +1,12 @@
 .app_sidebar{
      width: 100%;     
-     height: 100%; 
+     height: auto ;
 }
 
-
-.appli_status{
-     display:block;
-  background-color: #585858;;
-  color: #fff;  
-  font-family: var(--font-family);
-  font-size: medium;
-  font-weight: 400;
-  border-radius: 1px;
-  margin: none;
+.app_sidebar_title{
+font-size: 35px;
+font-weight: 600;
+text-align: left;
 }
 
 .app_sidebar-links_container p{

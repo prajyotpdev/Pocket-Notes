@@ -14,9 +14,9 @@ const SideBar = ({ handleCategoryClick }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
 
   const [selectedLink, dispatchSideBarLink] = useReducer(categoryReducer, "");
-  const handleLinkClick = (link) => {
-    setSelectedLink(link);
-  };
+  // const handleLinkClick = (link) => {
+  //   setSelectedLink(link);
+  // };
 
   const buttonClickHandler = (newCategory) => {
     handleCategoryClick(newCategory);
