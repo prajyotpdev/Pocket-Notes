@@ -1,12 +1,15 @@
 .app_sidebar{
      width: 100%;     
-     height: auto ;
+     height: 100vh ;
+     background-color: white;
+     padding: 10%;
 }
 
 .app_sidebar_title{
 font-size: 35px;
 font-weight: 600;
-text-align: left;
+text-align: center;
+margin: 50px auto 50px;
 }
 
 .app_sidebar-links_container p{
@@ -77,23 +80,52 @@ text-align: left;
 
 }
 
+.dialog {
+     max-width: 20rem;
+     padding: 2rem;
+     border: 0;
+     border-radius: 0.5rem;
+     box-shadow: hsl(0 0% 0% / 10%) 0 0 0.5rem 0.25rem;
+     position: relative;
+   }
+   
+.dialog::backdrop {
+     background: hsl(0 0% 0% / 50%);
+   }
+   
+   .addcircle{
+     height: 70px;
+  width: 70px;
+  background-color: #16008B;
+  color: aliceblue;
+  font-weight: 600;
+  font-size: larger;
+  margin: 9px auto 0px;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  margin-left: 15vw;
+  margin-bottom: 25px;
+  border: transparent;
+   }
 
-@media screen  and (max-width:1050px) {
-     .app_sidebar-links_container{
-          display: none;
-     }
-     .app_sidebar-links_container{
-          display: grid;
-     }
-     
-}
-
-@media screen and (min-width: 1050px){
-     .app_sidebar{
-          grid-template-columns: 1fr 4fr; 
-     }
-     .app_sidebar-links_container{
-          max-width: 75%;
-     }     
-     
-}
+   .createbutton{
+     width: 154px;
+     background-color: #001F8B;
+     border-radius:12px ;
+     border-color: transparent;
+     height: 38px;
+     color: #FFF;
+     font-family: Roboto;
+     font-size: 20px;
+     font-style: normal;
+     font-weight: 400;
+   }
+   
+.dialog-close-btn {
+     font-size: .75em;
+     position: absolute;
+     top: .25em;
+     right: .25em;
+   }
