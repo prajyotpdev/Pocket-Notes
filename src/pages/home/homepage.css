@@ -6,7 +6,7 @@
 .app_sidebar_list{
      display: grid;  
      grid-template-columns: 2fr 5fr; 
-     grid-gap: 10px; 
+     grid-gap: 1px; 
      border: 1px snow ;
      max-width: 100%;      
      color: #000;

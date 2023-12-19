@@ -80,17 +80,54 @@ margin: 50px auto 50px;
 
 }
 
-.dialog {
-     max-width: 20rem;
+#centerpoint {
+     top: 40%;
+     left: 40%;
+     position: absolute;
+ }
+ 
+dialog {
+     max-width: 40rem;
      padding: 2rem;
      border: 0;
      border-radius: 0.5rem;
-     box-shadow: hsl(0 0% 0% / 10%) 0 0 0.5rem 0.25rem;
+     box-shadow: hsl(0, 0%, 46%) 0 0 0.5rem 0.25rem;
      position: relative;
    }
+
+   
+dialog:modal{
+     top: 30%;
+     left: 40%;
+     position: absolute;
+     padding: 3%;
+ }
+
+dialog > label{
+     color: #000;
+     font-family: Roboto;
+     font-size: 29px;
+     font-style: normal;
+     font-weight: 500;
+     padding-top: 100px;
+ }
+dialog > input{
+     width: 435px;
+     height: 51px;
+     flex-shrink: 0;border-radius: 22px;
+     border: 2px solid #CCC;
+     background: #FFF;
+     color: #333333;
+     font-family: Roboto;
+     font-size: 23px;
+     font-style: normal;
+     font-weight: 400;
+     padding: 20px;
+ }
+
    
 .dialog::backdrop {
-     background: hsl(0 0% 0% / 50%);
+     background: black;
    }
    
    .addcircle{

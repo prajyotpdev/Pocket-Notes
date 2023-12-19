@@ -38,6 +38,7 @@ const NoteForm = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    validateForm();
     addNote(noteData);
     clearForm(e);
     setNoteData({
@@ -48,10 +49,9 @@ const NoteForm = (props) => {
   };
 
   function validateForm() {
-    var x = document.forms["myForm"]["data"].value;
-    if (x == "") {
-      console.log("Name must be filled out");
-      return false;
+    if (noteData.data == 0) {
+      alert("Invalid Form, Note cannot be empty");
+      return true;
     }
   }
 
@@ -63,6 +63,7 @@ const NoteForm = (props) => {
 
   return (
     <>
+      <div className="categorynametile">{category}</div>
       <div className="prevnotesdiv">
         <ul className="prevchatdivlist">
           {notes

@@ -33,11 +33,19 @@ const SideBar = ({ handleCategoryClick }) => {
 
   const handleAddGrp = (e) => {
     e.preventDefault();
+    validateForm();
     setGroups([...groups, group]);
     console.log(selectedColors);
     setGroup("");
     setcolor("");
   };
+
+  function validateForm() {
+    if (group.length == 0) {
+      alert("Invalid Form, Group Name can not be empty");
+      return true;
+    }
+  }
 
   const modal = document.querySelector("#modal");
   const openModal = document.querySelector("#openModal");
@@ -73,39 +81,42 @@ const SideBar = ({ handleCategoryClick }) => {
             <p>{group}</p>
           </a>
         ))}
-        <dialog id="modal">
-          <p>Create New Group</p>
-          <label>Group Name </label>
-          <input
-            type="text"
-            name="newgrp"
-            id="newgrpinput"
-            value={group}
-            onChange={handleInputChange}
-          />
-          <br />
-          <label>Choose Color : </label>
-          {colors.map((color) => (
-            <div
-              onClick={() => chooseColorHandler(color)}
-              style={{
-                borderRadius: "50%",
-                backgroundColor: color.toString(),
-                width: "30px",
-                height: "30px",
-              }}
-            ></div>
-          ))}
+        <div id="centerpoint">
+          <dialog id="modal">
+            <p>Create New Group</p>
+            <label>Group Name </label>
+            <input
+              type="text"
+              name="newgrp"
+              id="newgrpinput"
+              value={group}
+              onChange={handleInputChange}
+            />
+            <br />
+            <label>Choose Color : </label>
+            {colors.map((color) => (
+              <div
+                onClick={() => chooseColorHandler(color)}
+                style={{
+                  borderRadius: "50%",
+                  backgroundColor: color.toString(),
+                  width: "30px",
+                  height: "30px",
+                  marginLeft: "10px",
+                }}
+              ></div>
+            ))}
 
-          <br />
-          <button
-            id="closeModal"
-            onClick={handleAddGrp}
-            className="createbutton"
-          >
-            Create
-          </button>
-        </dialog>
+            <br />
+            <button
+              id="closeModal"
+              onClick={handleAddGrp}
+              className="createbutton"
+            >
+              Create
+            </button>
+          </dialog>
+        </div>
         <button id="openModal" className="addcircle">
           +
         </button>

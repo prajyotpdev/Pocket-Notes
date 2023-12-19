@@ -23,9 +23,21 @@
 }
 
 .myform label {
-
      font-size: 1.5rem;
      font-weight: bold;
+   }
+
+
+   .categorynametile{
+    width: 100%;
+    height: 10vh;
+    background-color:  #001F8B;
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    padding: 5%;
    }
 
    #sendbutton{
@@ -41,10 +53,12 @@
      overflow-x:hidden;
      overflow-y:visible;
      overflow-anchor: var(100);
+     padding: 20px;
    }
 
    .prevnoteslist{
      display: flex;
      flex-wrap: wrap;
      flex-direction: column;
-     justify-items: end;}
+     justify-items: end;
+    }
