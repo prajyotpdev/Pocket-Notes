@@ -9,20 +9,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { store } from "../../redux/store";
 import categoryReducer from "../../redux/reducers";
 
-let colors = {
-  "1" : "#B38BFA",
-  "2" : "#FF79F2",
-  "3" : "#43E6FC",
-  "4" : "#F19576",
-  "5" : "#0047FF",
-  "6" : "#6691FF",
-}
-
+let colors = ["#B38BFA", "#FF79F2", "#43E6FC", "#F19576", "#0047FF", "#6691FF"];
 
 const SideBar = ({ handleCategoryClick }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [groups, setGroups] = useState([]);
   const [group, setGroup] = useState("");
+  const [color, setcolor] = useState("");
+  const [selectedColors, setselectedColors] = useState([]);
   const [selectedLink, dispatchSideBarLink] = useReducer(categoryReducer, "");
 
   const buttonClickHandler = (newCategory) => {
@@ -33,11 +27,16 @@ const SideBar = ({ handleCategoryClick }) => {
       payload: newCategory,
     });
   };
+  const chooseColorHandler = (color) => {
+    setselectedColors(...selectedColors, color);
+  };
 
   const handleAddGrp = (e) => {
     e.preventDefault();
     setGroups([...groups, group]);
+    console.log(selectedColors);
     setGroup("");
+    setcolor("");
   };
 
   const modal = document.querySelector("#modal");
@@ -61,8 +60,16 @@ const SideBar = ({ handleCategoryClick }) => {
     <div className="app_sidebar">
       <div className="app_sidebar_title">Pocket Notes</div>
       <div className="app_sidebar-links_container">
-        {groups.map((group) => (
+        {groups.map((group, index) => (
           <a href="#group" onClick={() => buttonClickHandler(group)}>
+            <div
+              style={{
+                borderRadius: "50%",
+                backgroundColor: selectedColors[index],
+                width: "30px",
+                height: "30px",
+              }}
+            ></div>
             <p>{group}</p>
           </a>
         ))}
@@ -77,11 +84,25 @@ const SideBar = ({ handleCategoryClick }) => {
             onChange={handleInputChange}
           />
           <br />
-          <label>Choose Color :</label>
-          <div onClick={() => buttonClickHandler(color)} style={{borderRadius:"50%"}}>
-          </div>
+          <label>Choose Color : </label>
+          {colors.map((color) => (
+            <div
+              onClick={() => chooseColorHandler(color)}
+              style={{
+                borderRadius: "50%",
+                backgroundColor: color.toString(),
+                width: "30px",
+                height: "30px",
+              }}
+            ></div>
+          ))}
+
           <br />
-          <button id="closeModal" onClick={handleAddGrp} className="createbutton">
+          <button
+            id="closeModal"
+            onClick={handleAddGrp}
+            className="createbutton"
+          >
             Create
           </button>
         </dialog>
